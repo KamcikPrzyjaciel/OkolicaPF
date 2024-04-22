@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niemiry & Niegowiec</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(181, 241, 243)
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #c086ad;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+        }
+        section {
+            display: none;
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        section.active {
+            display: block;
+        }
+        .gallery-item {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 20px;
+        }
+
+            
+        
+        #galeria{
+            background-color: rgb(181, 241, 243);
+        }
+        #kontakt{
+            background-color: rgb(181, 241, 243);
+        }
+        #historia{
+            background-color: rgb(181, 241, 243);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Niemiry & Niegowiec</h1>
+    </header>
+    <nav>
+        <a href="#historia">Historia</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+    <section id="historia" class="active">
+        <h2>Historia</h2>
+        <p><h2>Niemiry – wieś w Polsce położona w województwie mazowieckim, w powiecie ostrowskim, w gminie Zaręby Kościelne.
+
+            W latach 1975–1998 miejscowość należała administracyjnie do województwa łomżyńskiego.
+            
+            Wierni kościoła rzymskokatolickiego należą do parafii św. Stanisława Biskupa i Męczennika w Zarębach Kościelnych.</h2>
+            <img src="niemiry.png" height="400" width="600"><br>
+            <br><br>
+           <h2>Niegowiec – wieś w Polsce położona w województwie mazowieckim, w powiecie ostrowskim, w gminie Małkinia Górna.
+
+            W latach 1975–1998 miejscowość administracyjnie należała do województwa ostrołęckiego.
+            
+            Wierni kościoła rzymskokatolickiego należą do parafii Najświętszego Serca Pana Jezusa w Małkini Górnej
+            <img src="niegowiec.png" height="400" width="600"><br>
+        </h2>
+        </p>
+    </section>
+    <section id="galeria">
+        <div class="gallery-item">
+            <ul>
+                <li><h1>Dom Kamila</h1></li>
+            </ul>
+            <img src="Dom Kamil.png" height="500" width="800"><br>
+            
+        </div>
+        <div class="gallery-item">
+            <ul>
+                <li><h1>Dom Patryka</h1></li>
+            </ul>
+            <img src="moja halupa.png" height="500" width="800"><br>
+            
+        </div>
+        <div class="gallery-item">
+            <ul>
+                <li><h1>Most kolejowy</h1></li>
+            </ul>
+            <img src="most.jpg" height="500" width="800">
+            
+        </div>
+        <div class="gallery-item">
+            <ul>
+                <li><h1>Zbrojne ramię naszych wsi</h1></li>
+            </ul>
+            <img src="pobrany plik.jpg" height="500" width="800">
+            
+            
+        </div>
+        <h1><br><br>Ludzie w okolicy</h1>
+        <div class="gallery-item">
+            
+            <ul>
+                <li><h1>Kolega pomaga znaleźć psa</h1></li>
+            </ul>
+            <img src="Daniel1.jpg" height="700" >
+            <img src="Daniel2.jpg" height="700">
+        
+            
+        </div>
+        <div class="gallery-item">
+            
+            <ul>
+                <li><h1>Błazen Bambus</h1></li>
+            </ul>
+            <img src="graczyk.jpg" height="700">
+        
+        </div>
+       
+        
+    </section>
+    <section id="kontakt">
+        <h1>Kontakt</h1>
+        <p><h2>Skontaktuj się z nami:</h2></p>
+        <address><h2>
+            Wioska Niemiry & Niegowiec<br>
+            Tel: 573-226-125<br>
+            Email: Wiocha@gmail.pl</h2>
+        </address>
+    </section>
+    <footer>
+        &copy; Moja okolica - Fydrych i Wierzbicki (wszelkie prawa zastrzeżone)
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("nav a");
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.add("active");
+                        } else {
+                            section.classList.remove("active");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
